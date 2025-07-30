@@ -9,5 +9,6 @@
   "baseFontSize": 20,
   "baseFontSizeAction": true,
   "translucency": false,
-  "showRibbon": false
+  "showRibbon": false,
+  "accentColor": ""
 }

@@ -4,24 +4,67 @@
     "type": "split",
     "children": [
       {
-        "id": "7f9834adb5726ac3",
-        "type": "tabs",
+        "id": "555bf35504032058",
+        "type": "split",
         "children": [
           {
-            "id": "6606b25ca5cf8883",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Inferencia Estadistica/Theory/IE - Teorico 22.md",
-                "mode": "preview",
-                "source": false
+            "id": "7f9834adb5726ac3",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "c348372e05e363d2",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Theory/IE - Teorico 25bis.md",
+                    "mode": "preview",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "IE - Teorico 25bis"
+                }
+              }
+            ]
+          },
+          {
+            "id": "28972b51d3a7b841",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "6606b25ca5cf8883",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Glosario.md",
+                    "mode": "preview",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Glosario"
+                }
               },
-              "icon": "lucide-file",
-              "title": "IE - Teorico 22"
-            }
+              {
+                "id": "95afd3da0ba4fa80",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Theory/IE - Teorico 24.md",
+                    "mode": "preview",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "IE - Teorico 24"
+                }
+              }
+            ],
+            "currentTab": 1,
+            "stacked": true
           }
-        ]
+        ],
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -59,31 +102,6 @@
           "icon": "lucide-search",
           "title": "Search"
         }
-      },
-      {
-        "id": "c6363dc38891ce45",
-        "type": "leaf",
-        "state": {
-          "type": "tag",
-          "state": {
-            "sortOrder": "frequency",
-            "useHierarchy": true,
-            "showSearch": false,
-            "searchQuery": ""
-          },
-          "icon": "lucide-tags",
-          "title": "Tags"
-        }
-      },
-      {
-        "id": "c5d0a9a5dd1a355c",
-        "type": "leaf",
-        "state": {
-          "type": "bookmarks",
-          "state": {},
-          "icon": "lucide-bookmark",
-          "title": "Bookmarks"
-        }
       }
     ],
     "currentTab": 0
@@ -98,7 +116,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Inferencia Estadistica/Theory/IE - Teorico 22.md",
+            "file": "Theory/IE - Teorico 24.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -112,32 +130,13 @@
         }
       },
       {
-        "id": "3aa8cf4def6d3663",
+        "id": "b597fd694c25e75d",
         "type": "leaf",
         "state": {
-          "type": "outgoing-link",
-          "state": {
-            "file": "Inferencia Estadistica/Theory/IE - Teorico 17.md",
-            "linksCollapsed": false,
-            "unlinkedCollapsed": true
-          },
-          "icon": "links-going-out",
-          "title": "Outgoing links"
-        }
-      },
-      {
-        "id": "da0af544193bd14a",
-        "type": "leaf",
-        "state": {
-          "type": "outline",
-          "state": {
-            "file": "Inferencia Estadistica/Theory/IE - Teorico 17.md",
-            "followCursor": false,
-            "showSearch": false,
-            "searchQuery": ""
-          },
-          "icon": "lucide-list",
-          "title": "Outline"
+          "type": "copilot-chat-view",
+          "state": {},
+          "icon": "message-square",
+          "title": "Copilot"
         }
       }
     ],
@@ -145,17 +144,20 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "copilot:Open Copilot Chat": false,
       "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false,
+      "copilot:Open Copilot Chat": false
     }
   },
-  "active": "6606b25ca5cf8883",
+  "active": "95afd3da0ba4fa80",
   "lastOpenFiles": [
+    "Theory/IE - Teorico 25bis.md",
+    "Theory/IE - Teorico 24.md",
+    "Glosario.md",
+    "Theory/IE - Teorico 11.md",
+    "Theory/IE - Teorico 25.md",
     "Inferencia Estadistica/Theory/IE - Teorico 20.md",
     "Inferencia Estadistica/Theory/IE - Teorico 19.md",
     "Inferencia Estadistica/Theory/IE - Teorico 18.md",
@@ -177,11 +179,6 @@
     "IE - Teorico 13.md",
     "Untitled 2.md",
     "copilot-conversations/[!Remark]_Vamos_a_dar_el_siguiente_sentido_a_notaciones_ya@20250720_204009.md",
-    "copilot-conversations/su_suppose_i_have_a_random_variable_which_represents_the@20250720_202850.md",
-    "copilot-conversations/how_do_we_evaluate_E(Xmathcal{G})@20250720_192132.md",
-    "Inferencia Estadistica/Glosario.md",
-    "Inferencia Estadistica/Theory/IE - Teorico 9.md",
-    "Inferencia Estadistica/Theory/IE - Teorico 8.md",
     "Pasted image 20250709184958.png",
     "Untitled",
     "Pasted image 20250526192210.png",

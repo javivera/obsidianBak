@@ -36,7 +36,7 @@
   },
   "extraSettings": {
     "foldDefault": "",
-    "noteTitleInTheoremLink": false,
+    "noteTitleInTheoremLink": true,
     "noteTitleInEquationLink": true,
     "profiles": {
       "English": {
@@ -104,7 +104,7 @@
     },
     "showTheoremTitleinBuiltin": true,
     "showTheoremContentinBuiltin": false,
-    "renderEquationinBuiltin": true,
+    "renderEquationinBuiltin": false,
     "triggerSuggest": "\\ref",
     "triggerTheoremSuggest": "\\tref",
     "triggerEquationSuggest": "\\eqref",

@@ -50,7 +50,7 @@
 
 >[!Definition] Test MP
 >Un test $\varphi$ para el problema $H_0: \mathcal{P}_0=\{P_0\}$ vs $H_1: \mathcal{P}_1=\{P_1\}$ se dice **más potente (MP)** de tamaño $\alpha$ si
->- i) $\beta_\varphi(P_0) = \alpha$ (El tamaño del test es exactamente $\alpha$).
+>- i) $\beta_\varphi(P_0) = \alpha$
 >- ii) Para todo test $\varphi'$ tal que $\beta_{\varphi'}(P_0) \le \alpha$, se tiene que $\beta_{\varphi'}(P_1) \le \beta_\varphi(P_1)$.
 
 >[!Remark]
@@ -58,10 +58,9 @@
 
 >[!Lemma] Neyman-Pearson I
 >Sea el problema de hipótesis simples planteado arriba, y sean $f_0, f_1$ las densidades de $P_0$ y $P_1$ respecto a una medida $\mu_0$.
->Entonces, para cada función $0 \le \gamma(x) \le 1$ y constante $k \ge 0$, el test
->$\varphi: \Omega_X \to[0,1]$ definido como
+>Entonces, para cada función $0 \le \gamma(x) \le 1$ y constante $k \ge 0$, el test $\varphi: \Omega_X \to[0,1]$ definido como
 >$$ \varphi(x) = \begin{cases} 1 & \text{si } f_1(x) > k f_0(x) \\ \gamma(x) & \text{si } f_1(x) = k f_0(x) \\ 0 & \text{si } f_1(x) < k f_0(x) \end{cases} $$
->es el test más potente (MP) de tamaño $\int \varphi f_0 d\mu = \beta_\varphi(P_0)$.
+>es el test más potente (MP) de tamaño $\beta_\varphi(P_0)=\int \varphi f_0 d\mu$.
 
 >[!Remark]
 >Al cambiar $\gamma$ y $k$ siempre obtenemos un test MP, pero de tamaño $\int \varphi f_0 d\mu$.
