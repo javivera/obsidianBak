@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+
+\title{Ejercicio 1: Test de Hipótesis para el Tiempo de Recorrido}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Parte a) Plantear un test de hipótesis}
+
+\subsection*{1. Definición de Variables Involucradas}
+Sea $X$ la variable aleatoria que representa el tiempo en recorrer un trayecto. Se asume que $X$ sigue una distribución normal con media $\mu$ y desviación estándar $\sigma = 2$ horas.
+Consideremos una muestra aleatoria de $n$ observaciones independientes $X_1, X_2, \dots, X_n$ del tiempo de recorrido.
+\begin{itemize}
+    \item $\mu$: Media poblacional del tiempo de recorrido (parámetro desconocido).
+    \item $\sigma$: Desviación estándar poblacional del tiempo de recorrido, conocida y $\sigma = 2$ horas.
+    \item $n$: Tamaño de la muestra.
+    \item $\alpha$: Nivel de significación del test, $\alpha = 0.05$.
+\end{itemize}
+
+\subsection*{2. Hipótesis a Testear}
+Se desea verificar si hay evidencia de que el tiempo de recorrido es en realidad menor a 15 horas. Por lo tanto, las hipótesis nula ($H_0$) y alternativa ($H_1$) se plantean de la siguiente manera:
+\begin{align*} H_0: \mu &= 15 \text{ horas} \\ H_1: \mu &< 15 \text{ horas} \end{align*}
+Este es un test de hipótesis unilateral (cola izquierda).
+
+\subsection*{3. Estadístico del Test}
+Dado que la población sigue una distribución normal y la desviación estándar poblacional $\sigma$ es conocida, el estadístico del test apropiado es el estadístico $Z$.
+Sea $\bar{X} = \frac{1}{n}\sum_{i=1}^n X_i$ la media muestral. El estadístico del test se define como:
+$$ Z = \frac{\bar{X} - \mu_0}{\sigma/\sqrt{n}} $$
+donde $\mu_0 = 15$ es el valor de la media bajo la hipótesis nula.
+
+\subsection*{4. Distribución del Estadístico bajo la Hipótesis Nula}
+Bajo la hipótesis nula $H_0: \mu = 15$, el estadístico $Z$ sigue una distribución normal estándar:
+$$ Z \sim N(0, 1) $$
+
+\subsection*{5. Región de Rechazo}
+Para un nivel de significación $\alpha = 0.05$ y dado que la hipótesis alternativa es $H_1: \mu < 15$ (test de cola izquierda), la región de rechazo ($RR$) se define como:
+$$ RR = \{z \in \mathbb{R} : z < z_\alpha\} $$
+donde $z_\alpha$ es el cuantil de orden $\alpha$ de la distribución normal estándar, es decir, $P(Z \le z_\alpha) = \alpha$.
+Para $\alpha = 0.05$, el valor crítico $z_{0.05}$ se busca en las tablas de la distribución normal estándar o se calcula, resultando aproximadamente:
+$$ z_{0.05} \approx -1.645 $$
+Por lo tanto, la región de rechazo es:
+$$ RR = \{z \in \mathbb{R} : z < -1.645\} $$
+Esto significa que se rechazará la hipótesis nula $H_0$ si el valor observado del estadístico $Z$ es menor que $-1.645$.
+
+\end{document}

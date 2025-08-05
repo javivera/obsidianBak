@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+
+\title{Derivación del Test Z a partir del Cociente de Verosimilitud}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problema}
+Sea $X_1, \dots, X_n$ una muestra aleatoria i.i.d. tal que $X_i \sim N(\mu, \sigma^2)$, con $\sigma^2$ conocido.
+Se desea testear el problema de hipótesis:
+$$ H_0: \mu = \mu_0 \quad \text{vs} \quad H_1: \mu \ne \mu_0 $$
+
+\subsection*{1. Definición de Espacios de Parámetros}
+\begin{itemize}
+    \item El espacio de parámetros completo es $\Theta = \{(\mu, \sigma^2): \mu \in \mathbb{R}, \sigma^2 \text{ conocida}\}$.
+    \item El espacio de parámetros bajo la hipótesis nula es $\Theta_0 = \{(\mu, \sigma^2): \mu=\mu_0, \sigma^2 \text{ conocida}\}$.
+\end{itemize}
+La función de densidad conjunta (o función de verosimilitud) para la muestra $x = (x_1, \dots, x_n)$ es:
+$$ p(x, \mu) = \frac{1}{(2\pi\sigma^2)^{n/2}} \exp\left(-\frac{1}{2\sigma^2} \sum_{i=1}^n (x_i - \mu)^2\right) $$
+Nótese que $\sigma^2$ es un valor fijo y conocido, no un parámetro a estimar.
+
+\subsection*{2. Construcción de los Estimadores de Máxima Verosimilitud (EMV)}
+
+\subsubsection*{a) EMV de $\mu$ en $\Theta$ ($\hat{\mu}$)}
+Para encontrar el EMV de $\mu$ en el espacio completo $\Theta$, maximizamos $p(x, \mu)$ con respecto a $\mu$. Esto es equivalente a minimizar el exponente de la función de densidad, es decir, minimizar $\sum_{i=1}^n (x_i - \mu)^2$.
+La solución a este problema de minimización es la media muestral:
+$$ \hat{\mu} = \frac{1}{n} \sum_{i=1}^n X_i = \bar{X} $$
+
+\subsubsection*{b) EMV de $\mu$ en $\Theta_0$ ($\hat{\mu}_0$)}
+Bajo la hipótesis nula $H_0: \mu = \mu_0$, el parámetro $\mu$ está restringido a ser $\mu_0$. Por lo tanto, el EMV de $\mu$ bajo $H_0$ es simplemente:
+$$ \hat{\mu}_0 = \mu_0 $$
+
+\subsection*{3. Cálculo del Cociente de Verosimilitud Generalizado ($\lambda(x)$)}
+El cociente de verosimilitud generalizado se define como $\lambda(x) = \frac{p(x, \hat{\mu})}{p(x, \hat{\mu}_0)}$. Sustituyendo los EMV obtenidos:
+$$ \lambda(x) = \frac{\frac{1}{(2\pi\sigma^2)^{n/2}} \exp\left(-\frac{1}{2\sigma^2} \sum_{i=1}^n (x_i - \bar{X})^2\right)}{\frac{1}{(2\pi\sigma^2)^{n/2}} \exp\left(-\frac{1}{2\sigma^2} \sum_{i=1}^n (x_i - \mu_0)^2\right)} $$
+Los términos $(2\pi\sigma^2)^{n/2}$ se cancelan, resultando en:
+$$ \lambda(x) = \exp\left(-\frac{1}{2\sigma^2} \left[ \sum_{i=1}^n (x_i - \bar{X})^2 - \sum_{i=1}^n (x_i - \mu_0)^2 \right]\right) $$
+Utilizamos la identidad algebraica $\sum_{i=1}^n (x_i - c)^2 = \sum_{i=1}^n (x_i - \bar{X})^2 + n(\bar{X} - c)^2$. Aplicando esta identidad para $c = \mu_0$:
+$$ \sum_{i=1}^n (x_i - \mu_0)^2 = \sum_{i=1}^n (x_i - \bar{X})^2 + n(\bar{X} - \mu_0)^2 $$
+Sustituyendo esta expresión en la ecuación de $\lambda(x)$:
+$$ \lambda(x) = \exp\left(-\frac{1}{2\sigma^2} \left[ \sum_{i=1}^n (x_i - \bar{X})^2 - \left( \sum_{i=1}^n (x_i - \bar{X})^2 + n(\bar{X} - \mu_0)^2 \right) \right]\right) $$
+$$ \lambda(x) = \exp\left(-\frac{1}{2\sigma^2} \left[ -n(\bar{X} - \mu_0)^2 \right]\right) $$
+$$ \lambda(x) = \exp\left(\frac{n(\bar{X} - \mu_0)^2}{2\sigma^2}\right) $$
+
+\subsection*{4. Derivación del Estadístico del Test y Región de Rechazo}
+El test de cociente de verosimilitud rechaza $H_0$ si $\lambda(x)$ es "grande", es decir, si $\lambda(x) > k$ para alguna constante $k$.
+Dado que la función exponencial es una función estrictamente creciente, la condición $\exp\left(\frac{n(\bar{X} - \mu_0)^2}{2\sigma^2}\right) > k$ es equivalente a:
+$$ \frac{n(\bar{X} - \mu_0)^2}{2\sigma^2} > \log(k) $$
+Multiplicando por 2 y dividiendo por $n$:
+$$ \frac{(\bar{X} - \mu_0)^2}{\sigma^2/n} > \frac{2\log(k)}{n} $$
+Tomando la raíz cuadrada de ambos lados (y considerando que es un test bilateral, por lo que nos interesan desviaciones en ambas direcciones):
+$$ \left|\frac{\bar{X} - \mu_0}{\sigma/\sqrt{n}}\right| > \sqrt{\frac{2\log(k)}{n}} $$
+Definimos el estadístico $Z = \frac{\bar{X} - \mu_0}{\sigma/\sqrt{n}}$. Bajo la hipótesis nula $H_0$, este estadístico sigue una distribución normal estándar: $Z \sim N(0,1)$.
+Por lo tanto, la regla de rechazo se convierte en:
+$$ \text{Rechazar } H_0 \text{ si } |Z| > c $$
+donde $c = \sqrt{\frac{2\log(k)}{n}}$. Para un nivel de significación $\alpha$, queremos que la probabilidad de rechazar $H_0$ cuando es verdadera sea $\alpha$:
+$$ P(|Z| > c \mid H_0) = \alpha $$
+Como $Z \sim N(0,1)$, esto implica que $P(Z < -c \text{ o } Z > c) = \alpha$. Debido a la simetría de la distribución normal estándar, $P(Z > c) = \alpha/2$.
+Por lo tanto, $c$ es el cuantil $z_{1-\alpha/2}$ de la distribución normal estándar.
+
+Así, el test de cociente de verosimilitud para el problema $H_0: \mu = \mu_0 \quad \text{vs} \quad H_1: \mu \ne \mu_0$ con $\sigma^2$ conocido es equivalente al test Z bilateral:
+$$ \varphi(X_1, ..., X_n) = \begin{cases} 1 & \text{si } \left|\frac{\sqrt{n}(\bar{X}_n - \mu_0)}{\sigma}\right| > z_{1-\alpha/2} \\ 0 & \text{en caso contrario} \end{cases} $$
+
+\end{document}

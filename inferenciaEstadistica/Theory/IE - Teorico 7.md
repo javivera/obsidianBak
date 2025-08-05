@@ -8,7 +8,7 @@
 >- i) $\omega \in \Omega$ fijo $\Rightarrow \hat{F}_n(\cdot,\omega): \mathbb{P} \rightarrow [0,1]$ cumple les propiedades de f.d.a
 >- ii) $x \in \mathbb{R}$ fijo $\Rightarrow \hat{F}_n(x,\cdot): \Omega \rightarrow \mathbb{R}$ es v.a
 >- iii) Las v.a ${} Y_j = I_{(-\infty,x]}(X_j) \sim Ber(p)$ con $p= P(X_j \leq x) = F_{X_{j}}(x)$
->- iii b) ${} \displaystyle \sum_{i=1}^n I_{(-\infty, x]}(X_{i}) \sim Bi(n, p) {}$
+>- iii b) $\displaystyle \sum_{i=1}^n I_{(-\infty, x]}(X_{i}) \sim Bi(n, p)$
 >- iv) ${} E(\hat{F}_n(x,\cdot)) = p= F(x) {}$
 >- v) $P\left(\{\omega\in \Omega:\lim\limits_{n\rightarrow\infty} \big(\hat{F}_n(x,\cdot) - F(x)\big) = 0\}\right) = 1\quad\forall x\in \mathbb{R}$ 
 >(osea $\hat{F}_{n}(x,\cdot)\xrightarrow{pp} F(x)$)
@@ -65,4 +65,5 @@
 >Ademas si todas las sub convergen a la misma distribucion $F$ la sucesion $X_{n}$ tambien converge a $F$    
 
 ^06187a
+
 

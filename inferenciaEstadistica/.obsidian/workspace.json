@@ -4,41 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "977200cbd925e14e",
+        "id": "3218108581308660",
         "type": "tabs",
         "children": [
           {
-            "id": "9edabae50f201f9f",
+            "id": "a2e60ad7b972b760",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Theory/IE - Teorico 25bis.md",
-                "mode": "preview",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "IE - Teorico 25bis"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b25527c9f6fa6796",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "0d8f90aa37794a3c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Theory/IE - Teorico 25.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "IE - Teorico 25"
+              "title": "New tab"
             }
           }
         ]
@@ -68,35 +44,24 @@
             }
           },
           {
-            "id": "6acdf623e8a90d88",
+            "id": "d158f62172240315",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Inferencia Estadistica/Glosario.md",
-                "mode": "source",
+                "file": "Glosario.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "Glosario"
-            }
-          },
-          {
-            "id": "d158f62172240315",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "ce4bb695f0ccdb6c",
@@ -185,7 +150,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "definida como",
+                "query": "p-valor",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -195,14 +160,23 @@
               "icon": "lucide-search",
               "title": "Search"
             }
+          },
+          {
+            "id": "bd714e14ddcb86ec",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-chat-view",
+              "state": {},
+              "icon": "message-square",
+              "title": "Copilot"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 294.5,
-    "collapsed": true
+    "width": 939.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -213,34 +187,40 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0d8f90aa37794a3c",
+  "active": "a2e60ad7b972b760",
   "lastOpenFiles": [
+    "Theory/IE - Teorico 7.md",
+    "Theory/IE - Teorico 26.md",
+    "copilot-conversations/lets_try_to_solve_this_.._using_the_rest_of@20250804_214352.md",
+    "pdflatex29341.fls",
+    "derivation_z_test.pdf",
+    "derivation_z_test.log",
+    "derivation_z_test.fls",
+    "pdflatex29340.fls",
+    "derivation_z_test.fdb_latexmk",
+    "derivation_z_test.aux",
+    "Practicos/derivation_z_test.tex",
+    "pdflatex25401.fls",
+    "pdflatex24904.fls",
+    "Theory/IE - Teorico 25.md",
     "Theory/IE - Teorico 25bis.md",
+    "Imagenes/Pasted image 20250802231758.png",
+    "Imagenes/Pasted image 20250803123520.png",
+    "Imagenes/Pasted image 20250803121045.png",
+    "Imagenes/Pasted image 20250802231909.png",
+    "Theory/IE - Teorico 24.md",
+    "Imagenes/Pasted image 20250802222214.png",
+    "Glosario.md",
     "Inferencia Estadistica/Theory/Notas.md",
-    "Inferencia Estadistica/probando.pdf",
-    "Inferencia Estadistica/IE - Teorico25bis.pdf",
-    "Inferencia Estadistica/Theory/IE-Teorico25bis.pdf",
     "Inferencia Estadistica/Theory/IE - Teorico 25bis.md",
     "Inferencia Estadistica/Theory/Pasted image 20250726170614.png",
     "Inferencia Estadistica/Theory/Pasted image 20250726164154.png",
-    "Inferencia Estadistica/Theory/pdflatex20985.fls",
-    "Inferencia Estadistica/Theory/pdflatex20278.fls",
-    "Inferencia Estadistica/Theory/IE-Teorico25bis.log",
-    "Inferencia Estadistica/Theory/IE-Teorico25bis.fls",
-    "Inferencia Estadistica/Theory/pdflatex20237.fls",
-    "Inferencia Estadistica/Theory/IE-Teorico25bis.fdb_latexmk",
-    "Inferencia Estadistica/Theory/IE-Teorico25bis.aux",
     "Inferencia Estadistica/Theory/IE - Teorico 24.md",
     "Inferencia Estadistica/Theory/IE - Teorico 25.md",
     "Inferencia Estadistica/Theory/IE - Teorico 23.md",
     "Inferencia Estadistica/Imagenes/Pasted image 20250709184958.png",
     "Inferencia Estadistica/Imagenes/Pasted image 20250726121754.png",
     "Inferencia Estadistica/Imagenes/Pasted image 20250506100617.png",
-    "Pasted image 20250726163700.png",
-    "Inferencia Estadistica/Imagenes/Pasted image 20250726164154.png",
-    "Inferencia Estadistica/Imagenes/Pasted image 20250726170614.png",
-    "Inferencia Estadistica/Imagenes/Pasted image 20250726121719.png",
-    "Pasted image 20250718225618.png",
     "Inferencia Estadistica/Glosario.md",
     "Inferencia Estadistica/Theory/IE - Teorico 13.md",
     "13 bis.md",
@@ -254,12 +234,6 @@
     "copilot-conversations/[!Definition]_Estimadores_Plug_In_Estimadores_del_tipo_del_ejemplo_anterior,@20250727_193851.md",
     "copilot-conversations/[[IE_-_Teorico_23]]_Más_en_general,_si_tenemos_una@20250727_192449.md",
     "copilot-conversations/Observamos_que_por_la_Ley_Fuerte_de_los_Grandes_Números,@20250727_191223.md",
-    "copilot-conversations/[[IE_-_Teorico_23]]_how_is_it_that_we_say@20250727_181940.md",
-    "copilot-conversations/[[IE_-_Teorico_23]]_[!Remark]_Otra_forma_de_estimar_en@20250727_174139.md",
-    "copilot-conversations/[!Remark]_Método_de_los_Momentos_Sea_$X_1,_dots,_X_n$_una@20250727_160306.md",
-    "copilot-conversations/[!Remark]_Volvemos_a_la_presentación_general._Si_tenemos_$Theta_subseteq@20250727_142759.md",
-    "Inferencia Estadistica/Theory/IE - Teorico 22.md",
-    "copilot-conversations/[!Theorem]_Desigualdad_de_Rao-Cramer_Sea_$Theta_subset_mathbb{R}^k$_abierto,_$mathcal{P}@20250727_122512.md",
-    "copilot-conversations/[!Lemma]_Sea_$(Omega,_mathcal{F},_mu)$_un_espacio_de_medida_y@20250727_121429.md"
+    "copilot-conversations/[[IE_-_Teorico_23]]_how_is_it_that_we_say@20250727_181940.md"
   ]
 }

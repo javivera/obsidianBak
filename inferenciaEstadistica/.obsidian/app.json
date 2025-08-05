@@ -3,7 +3,7 @@
   "showLineNumber": false,
   "readableLineLength": false,
   "showInlineTitle": true,
-  "vimMode": true,
+  "vimMode": false,
   "spellcheck": false,
   "strictLineBreaks": false,
   "useMarkdownLinks": false,
@@ -15,5 +15,6 @@
     "margin": "0",
     "downscalePercent": 70
   },
-  "smartIndentList": true
+  "smartIndentList": true,
+  "autoConvertHtml": false
 }
