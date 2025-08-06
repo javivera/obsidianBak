@@ -11,10 +11,14 @@
             "id": "0366410b9134199b",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Theory/Teórico 3.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Teórico 3"
             }
           }
         ]
@@ -183,8 +187,8 @@
             "state": {
               "type": "copilot-chat-view",
               "state": {},
-              "icon": "message-square",
-              "title": "Copilot"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           }
         ],
@@ -207,8 +211,15 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "aeb83359a0ad264b",
+  "active": "0366410b9134199b",
   "lastOpenFiles": [
+    "teoricos_1_2.pdf",
+    "teoricos_1_2.aux",
+    "teoricos_1_2.log",
+    "teoricos_1_2.tex",
+    "Theory/Teórico 1.md",
+    "Theory/Teórico 3.md",
+    "Theory/Teórico 2.md",
     "Theory/Teórico 6.md",
     "Theory/Teórico 8.md",
     "Inferencia Estadistica/Theory/IE - Teorico 13.md",
@@ -232,10 +243,6 @@
     "copilot-conversations/[[IE_-_Teorico_23]]_[!Remark]_Otra_forma_de_estimar_en@20250727_174139.md",
     "copilot-conversations/[!Remark]_Método_de_los_Momentos_Sea_$X_1,_dots,_X_n$_una@20250727_160306.md",
     "copilot-conversations/[!Remark]_Volvemos_a_la_presentación_general._Si_tenemos_$Theta_subseteq@20250727_142759.md",
-    "Inferencia Estadistica/Theory/IE - Teorico 22.md",
-    "Inferencia Estadistica/Theory/IE - Teorico 24.md",
-    "copilot-conversations/[!Theorem]_Desigualdad_de_Rao-Cramer_Sea_$Theta_subset_mathbb{R}^k$_abierto,_$mathcal{P}@20250727_122512.md",
-    "copilot-conversations/[!Lemma]_Sea_$(Omega,_mathcal{F},_mu)$_un_espacio_de_medida_y@20250727_121429.md",
     "Pasted image 20250726170614.png",
     "Pasted image 20250726164154.png",
     "Pasted image 20250726163700.png",
@@ -251,9 +258,6 @@
     "Inferencia Estadistica/Imagenes/Pasted image 20250506100617.png",
     "Inferencia Estadistica/Imagenes/Pasted image 20250517134031.png",
     "Inferencia Estadistica/Imagenes/Pasted image 20250518093944.png",
-    "Ecuaciones Diferenciales I",
-    "Inferencia Estadistica/Imagenes",
-    "Analisis Funcional/Theory/Teórico 18.md.tmp",
-    "Analisis Funcional/Theory/Teórico 12.md.tmp"
+    "Ecuaciones Diferenciales I"
   ]
 }

@@ -36,7 +36,7 @@
   },
   "extraSettings": {
     "foldDefault": "",
-    "noteTitleInTheoremLink": false,
+    "noteTitleInTheoremLink": true,
     "noteTitleInEquationLink": true,
     "profiles": {
       "English": {

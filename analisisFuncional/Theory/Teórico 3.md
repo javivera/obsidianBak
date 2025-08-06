@@ -7,7 +7,7 @@ dateCreated: 2024-09-22,22:22
 > Sea $A\subset X$ espacio vectorial. $A$ es convexo si $\forall x,y\in A$
 > $$t x+(1-t)y\in A\quad\forall t\in[0,1]$$
 
-> [!Remark]-
+> [!Remark]
 >  Todo espacio vectorial es convexo
 
 ^0636e2
@@ -36,7 +36,7 @@ dateCreated: 2024-09-22,22:22
 
 ^1741ed
 
->[!Remark]-
+>[!Remark]
 >En dim finita la existencia de $q$ es cierta inclusive sin que $A$ sea convexo pues $\{ q_{n} \}$ es acotada entonces tiene un sub convergente. Pero si $A$ no es convexo la unicidad en general no es cierta ej. $A$ circunferencia y $p$ el centro
 
 >[!Theorem] 
