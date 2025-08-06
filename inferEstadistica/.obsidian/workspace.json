@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Theory/IE - Teorico 26.md",
+                "file": "Theory/IE - Teorico 8.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "IE - Teorico 26"
+              "title": "IE - Teorico 8"
             }
           }
         ]
@@ -108,7 +108,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 655.5
+    "width": 655.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -121,6 +122,7 @@
   },
   "active": "3613955d2d44cf51",
   "lastOpenFiles": [
+    "Theory/IE - Teorico 26.md",
     "Glosario.md",
     "Templates/math.md",
     "Practicos/prueba.tex",
@@ -140,7 +142,6 @@
     "Imagenes",
     "IE - Teorico 26.md",
     "Theory/Notas.md",
-    "Theory/IE - Teorico 26.md",
     "Theory/IE - Teorico 25bis.md",
     "Theory/IE - Teorico 25.md",
     "Theory/IE - Teorico 24.md",
