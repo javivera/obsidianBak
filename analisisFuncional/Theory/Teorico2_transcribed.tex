@@ -1,0 +1,251 @@
+% Transcription of Teórico 2.md into LaTeX
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}[section]
+\newtheorem{example}[definition]{Ejemplo}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{corollary}[definition]{Corolario}
+\theoremstyle{plain}
+\newtheorem{lemma}[definition]{Lema}
+\newtheorem{proposition}[definition]{Proposición}
+\newtheorem{theorem}[definition]{Teorema}
+
+\begin{document}
+
+% metadata
+% dateCreated: 2024-09-23,08:32
+
+\section*{Producto interno}
+
+\begin{definition}[Producto interno]
+Un espacio vectorial sobre $\mathbb{R}$ (o $\mathbb{C}$). Un producto interno en $X$ es una función $X\times X\to\mathbb{R}$ (o $\mathbb{C}$) tal que para todo $x,y,z\in X$ y $\alpha,\beta\in\mathbb{R}$ (o $\mathbb{C}$):
+\begin{enumerate}[label=\alph*)]
+\item $\langle x,x\rangle\ge 0$ (y $\langle x,x\rangle\in\mathbb{R}$).
+\item $\langle x,x\rangle=0\iff x=0$.
+\item $\langle\alpha x+\beta y,z\rangle=\alpha\langle x,z\rangle+\beta\langle y,z\rangle$.
+\item $\langle x,y\rangle=\langle y,x\rangle$ (en el caso complejo $\langle x,y\rangle=\overline{\langle y,x\rangle}$).
+\end{enumerate}
+\end{definition}
+
+\begin{example}[Algunos productos internos]
+\begin{itemize}
+\item $\mathbb{C}^n$ con $\langle x,y\rangle=\sum x_k\overline{y_k}$.
+\item $\mathbb{R}^n$ con $\langle x,y\rangle=\sum_{k=1}^n x_k y_k$.
+\item Si $X$ es un ev con base $\{e_1,\dots,e_k\}$ y $x=\sum\lambda_k e_k$, $y=\sum\beta_k e_k$, entonces
+$\langle x,y\rangle=\sum \lambda_k\overline{\beta_k}$ define un producto interno.
+\item Si $(X,\Sigma,\mu)$ es medible, $\langle f,g\rangle=\int f\overline{g}$ es producto interno en $L^2(X)$ (notar que $\int|fg|<\infty$ por Hölder con $p=q=2$).
+\item Para $a=(a_n)\in\ell^2$, $b=(b_n)\in\ell^2$, la función $\langle a,b\rangle=\sum a_n\overline{b_n}$ es producto interno.
+\item Si $X$ tiene producto interno y $S$ es subespacio, la restricción es producto interno en $S$.
+\item Si $X,Y$ son ev con p.i. $\langle\cdot,\cdot\rangle_1$ y $\langle\cdot,\cdot\rangle_2$ respectivamente, en $Z=X\times Y$ se define
+\[\langle (u,v),(x,y)\rangle_Z=\langle u,x\rangle_1+\langle v,y\rangle_2,\]
+que es un producto interno.
+\end{itemize}
+\end{example}
+
+\begin{lemma}[Resultados evpi]
+Sea $X$ evpi y $x,y,z\in X$, $\alpha,\beta\in\mathbb{F}$. Se tiene:
+\begin{enumerate}[label=\alph*)]
+\item $\langle 0,y\rangle=\langle x,0\rangle=0$.
+\item $\langle x,\alpha y+\beta z\rangle=\overline{\alpha}\langle x,y\rangle+\overline{\beta}\langle x,z\rangle$.
+\item
+\[\langle\alpha x+\beta y,\alpha x+\beta y\rangle=|\alpha|^2\langle x,x\rangle+|\beta|^2\langle y,y\rangle+\alpha\overline{\beta}\langle x,y\rangle+\beta\overline{\alpha}\langle y,x\rangle.\]
+\end{enumerate}
+\begin{proof}
+Ejercicio.
+\end{proof}
+\end{lemma}
+
+\begin{proposition}[Desigualdad de Cauchy-Schwarz]
+Sea $X$ evpi y $x,y\in X$. Entonces:
+\begin{enumerate}[label=\alph*)]
+\item $|\langle x,y\rangle|^2\le\langle x,x\rangle\langle y,y\rangle$.
+\item La función $\|\cdot\|:X\to\mathbb{R}$ dada por $\|x\|=\langle x,x\rangle^{1/2}$ es una norma en $X$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) Para $x,y\neq0$ use la parte (c) del lema anterior con
+$\alpha=-\dfrac{\overline{\langle x,y\rangle}}{\langle x,x\rangle}$ y $\beta=1$; se obtiene
+\[0\le\langle\alpha x+\beta y,\alpha x+\beta y\rangle=\frac{|\langle x,y\rangle|^2}{\langle x,x\rangle}-\frac{|\langle x,y\rangle|^2}{\langle x,x\rangle}-\frac{\langle x,y\rangle\overline{\langle x,y\rangle}}{\langle x,x\rangle}+\langle y,y\rangle,
+\]
+lo que reduce a la desigualdad.
+
+(b) Trivial usando la definición de producto interno. Para demostrar la desigualdad triangular se observa que
+\begin{align*}
+\|x+y\|^{2}&=\langle x+y,x+y\rangle=\langle x,x\rangle+\langle x,y\rangle+\langle y,x\rangle+\langle y,y\rangle\\
+&=\|x\|^2+2\operatorname{Re}(\langle x,y\rangle)+\|y\|^2\le\|x\|^2+2|\langle x,y\rangle|+\|y\|^2\\
+&\le\|x\|^2+2\|x\|\|y\|+\|y\|^2=(\|x\|+\|y\|)^2.
+\end{align*}
+\end{proof}
+
+\begin{remark}[Norma inducida]
+La norma $\|\cdot\|=\langle\cdot,\cdot\rangle^{1/2}$ se dice inducida por el producto interno. Por ejemplo $\mathbb{F}^k,\ell^2,L^2(X)$ con los p.i. estándar inducen las normas correspondientes. La desigualdad anterior puede escribirse como
+\[|\langle x,y\rangle|\le\|x\|\|y\|.\]
+\end{remark}
+
+\begin{lemma}
+Sea $X$ evpi con producto interno $\langle\cdot,\cdot\rangle$. Para $u,v,x,y\in X$ se tiene:
+\begin{enumerate}[label=\alph*)]
+\item $\langle u+v,x+y\rangle-\langle u-v,x-y\rangle=2\langle u,y\rangle+2\langle v,x\rangle$.
+\item Si $\mathbb{F}=\mathbb{C}$, 
+\[4\langle u,y\rangle=\langle u+v,x+y\rangle-\langle u-v,x-y\rangle+i\langle u+iv,x+iy\rangle-i\langle u-ix,x-iy\rangle.
+\]
+\end{enumerate}
+\begin{proof}
+Ejercicio.
+\end{proof}
+\end{lemma}
+
+\begin{theorem}[Regla del paralelogramo e identidad de polarización]
+Sea $X$ evpi con norma inducida $\|\cdot\|$. Para todo $x,y\in X$:
+\begin{enumerate}[label=\alph*)]
+\item Regla del paralelogramo: $\|x+y\|^2+\|x-y\|^2=2(\|x\|^2+\|y\|^2)$.
+\item Si $\mathbb{F}=\mathbb{R}$, $4\langle x,y\rangle=\|x+y\|^2-\|x-y\|^2$.
+\item Si $\mathbb{F}=\mathbb{C}$, $4\langle x,y\rangle=\|x+y\|^2-\|x-y\|^2+i\|x+iy\|^2-i\|x-iy\|^2$ (identidad de polarización).
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}[Contraejemplo a la regla del paralelogramo]
+La norma sup en $C[0,1]$, $\|f\|_{C}=\max_{x\in[0,1]}|f(x)|$, no proviene de un producto interno, por lo que la regla del paralelogramo no se cumple.
+\end{remark}
+
+\begin{proposition}[Continuidad del producto interno]
+Sea $X$ evpi y $\{x_n\},\{y_n\}\subset X$ con $x_n\to x$, $y_n\to y$. Entonces $\langle x_n,y_n\rangle\to\langle x,y\rangle$.
+\begin{proof}
+Se usa que
+\[|\langle x_n,y_n\rangle-\langle x,y\rangle|\le|\langle x_n,y_n\rangle-\langle x_n,y\rangle|+|\langle x_n,y\rangle-\langle x,y\rangle|\]
+y luego Cauchy-Schwarz para cada término: $\le\|x_n\|\|y_n-y\|+\|x_n-x\|\|y\|\to0$.
+\end{proof}
+\end{proposition}
+
+\section*{Ortogonalidad}
+
+\begin{definition}[Ortogonalidad]
+Sea $X$ evpi. Decimos que $x,y\in X$ son ortogonales si $\langle x,y\rangle=0$. Un conjunto $\{e_1,\dots,e_n\}\subset X$ es ortonormal si $\|e_k\|=1$ para todo $k$ y $\langle e_j,e_k\rangle=0$ para $j\neq k$.
+\end{definition}
+
+\begin{lemma}[Base ortonormal]
+Sea $X$ evpi. Un conjunto ortonormal $\{e_1,\dots,e_k\}$ es linealmente independiente; si $\dim X=k$ entonces es base y para todo $x\in X$ se tiene
+\[x=\sum_{n=1}^k\langle x,e_n\rangle e_n.\]
+\end{lemma}
+
+\begin{theorem}[Gram-Schmidt]
+Sea $X$ evpi y $\{v_1,\dots,v_k\}$ linealmente independientes en $X$. Entonces existe una base ortonormal $\{e_1,\dots,e_k\}$ de $\operatorname{span}\{v_1,\dots,v_k\}$.
+\end{theorem}
+
+\begin{definition}[Espacio de Hilbert]
+Un espacio con producto interno completo respecto de la métrica asociada a la norma inducida se llama espacio de Hilbert.
+\end{definition}
+
+\begin{example}
+(1) Todo ev de dim finita con un producto interno.
+(2) $L^2(X)$ y $\ell^2$ con los productos internos estándar.
+\end{example}
+
+\begin{remark}
+Un espacio con producto interno que no es completo: $\ell^2_c=\{(x_n)_{n\in\mathbb{N}}:x_n\neq0\text{ en sólo finitos }n\}$. Con el producto interno usual no es completo.
+\end{remark}
+
+\begin{proposition}
+Sea $\mathcal{H}$ Hilbert y $Y\subset\mathcal{H}$ subespacio. Entonces
+\[Y\text{ es Hilbert }\iff Y\text{ es cerrado en }\mathcal{H}.\]
+\begin{proof}
+Directo: $Y$ Hilbert $\iff$ $Y$ completo. Un subespacio de un espacio métrico completo es completo si y sólo si es cerrado.
+\end{proof}
+\end{proposition}
+
+\section*{Complemento ortogonal}
+
+\begin{definition}
+Sea $X$ un ev con producto interno. Para $A\subset X$ definimos
+\[A^{\perp}=\{x\in X:\langle x,a\rangle=0\ \forall a\in A\}\]
+(si $A=\emptyset$ ponemos $A^{\perp}=X$).
+\end{definition}
+
+\begin{example}
+(1) $X=\mathbb{R}^3$, $A=\{(a_1,a_2,a_3):a_3=0\}$. Entonces $A^{\perp}=\{(0,0,x_3)\}$. 
+(2) Si $\{e_1,\dots,e_k\}$ es base y $A=\operatorname{span}\{e_1,\dots,e_p\}$, entonces $A^{\perp}=\operatorname{span}\{e_{p+1},\dots,e_k\}$.
+\end{example}
+
+\begin{lemma}
+Sea $X$ evpi y $A\subset X$.
+\begin{enumerate}[label=\alph*)]
+\item $0\in A^{\perp}$.
+\item Si $0\in A$ entonces $A\cap A^{\perp}=\{0\}$.
+\item $\{0\}^{\perp}=X$, $X^{\perp}=\{0\}$.
+\item Si $A$ contiene una bola $B_a(r)$ para algún $r>0$ y $a\in A$ entonces $A^{\perp}=\{0\}$ (en particular, si $A$ es abierto no vacío entonces $A^{\perp}=\{0\}$).
+\item Si $B\subset A$ entonces $A^{\perp}\subset B^{\perp}$.
+\item $A^{\perp}$ es subespacio cerrado de $X$.
+\item $A\subset(A^{\perp})^{\perp}=A^{\perp\perp}$.
+\end{enumerate}
+\begin{proof}
+Los ítems se demuestran con argumentos estándar; por ejemplo (b) si $x_0\in A\cap A^{\perp}$ entonces $\langle x_0,x_0\rangle=0\implies x_0=0$.
+\end{proof}
+\end{lemma}
+
+\begin{proposition}
+Sea $Y$ subespacio de $X$ evpi. Entonces
+\[x\in Y^{\perp}\iff\|x-y\|\ge\|x\|\quad\forall y\in Y.\]
+\end{proposition}
+\begin{proof}
+Usando la identidad (ver lema) para $\|x-\alpha y\|^2$ se obtiene
+\[\|x-\alpha y\|^2=\|x\|^2-\overline{\alpha}\langle x,y\rangle-\alpha\langle y,x\rangle+|\alpha|^2\|y\|^2\]
+para todo $x\in X,y\in Y,\alpha\in\mathbb{F}$.
+
+(\emph{Ida}) Si $x\in Y^{\perp}$ entonces $\langle x,y\rangle=0$ para todo $y$, con lo que
+\[\|x-y\|^2=\|x\|^2+\|y\|^2\ge\|x\|^2.\]
+
+(\emph{Vuelta}) Supongamos $\|x-y\|^2\ge\|x\|^2$ para todo $y\in Y$. Como $Y$ es subespacio esto vale con $\alpha y$ en lugar de $y$. Entonces
+\[0\le\|x-\alpha y\|^2-\|x\|^2=-\overline{\alpha}\langle x,y\rangle-\alpha\langle y,x\rangle+|\alpha|^2\|y\|^2.\]
+Sea
+\[\beta=\begin{cases}\dfrac{|\langle x,y\rangle|}{\langle y,x\rangle}&\text{si }\langle x,y\rangle\ne0,\\1&\text{si }\langle x,y\rangle=0.\end{cases}\]
+Notar que $\beta\langle y,x\rangle=|\langle x,y\rangle|$, $\overline{\beta}=\dfrac{|\langle x,y\rangle|}{\langle x,y\rangle}$ y $|\beta|^2=1$. Sea $\alpha=t\beta$ con $t>0$. Entonces
+\[0\le -2t|\langle x,y\rangle|+t^2\|y\|^2\]
+y así $|\langle x,y\rangle|\le\dfrac{t}{2}\|y\|^2$. Tomando $t\to0^+$ concluye $\langle x,y\rangle=0$ para todo $y\in Y$, es decir $x\in Y^{\perp}$.
+\end{proof}
+
+\section*{Convexo}
+
+\begin{definition}[Convexo]
+Un conjunto $A\subset X$ es convexo si para todo $x,y\in A$ y todo $t\in(0,1)$ se tiene $tx+(1-t)y\in A$.
+\end{definition}
+
+\begin{theorem}[Proyección sobre un convexo]
+Sea $\mathcal{H}$ espacio de Hilbert, $A\subset\mathcal{H}$ cerrado y convexo. Para cada $p\in\mathcal{H}$ existe único $q\in A$ tal que
+\[\|p-q\|=\inf\{\|p-a\|:a\in A\}.
+\]
+\end{theorem}
+
+\begin{remark}
+Sea $p\in\mathcal{H}$ y $q\in A$ que satisface la propiedad anterior (proyección). Si $\mathbb{F}=\mathbb{R}$ entonces
+\[\|p-q\|=\min_{a\in A}\|p-a\|\iff\langle p-q,a-q\rangle\le0\quad\forall a\in A.
+\]
+\begin{proof}
+(\emph{Ida}) Sea $a\in A$ y defina $v=(1-t)q+ta\in A$ para $t\in[0,1]$. Por minimalidad se tiene
+\[\|p-q\|\le\|p-v\|=\|(p-q)-t(a-q)\|\le\|p-q\|+\|t(a-q)\|,\]
+la desigualdad viene de que $v\in A$.
+
+Recordemos por definición:
+\[\|u-v\|^2=\langle u-v,u-v\rangle=\langle u,u\rangle-2\langle u,v\rangle+\langle v,v\rangle.\]
+En este caso, $u=p-q$ y $v=t(a-q)$, por lo que
+\[\|(p-q)-t(a-q)\|^2=\|p-q\|^2-2t\langle p-q,a-q\rangle+t^2\|a-q\|^2.\]
+Por tanto
+\[\|p-q\|^2\le\|p-q\|^2+t^2\|a-q\|^2-2t\langle p-q,a-q\rangle,\]
+y reorganizando
+\[0\le t\|a-q\|^2-2\langle p-q,a-q\rangle.\]
+Llevando $t\to0^+$ se obtiene $0\ge\langle p-q,a-q\rangle$.
+
+(\emph{Vuelta}) Si $\langle p-q,a-q\rangle\le0$ para todo $a\in A$, entonces
+\[\|p-a\|^2=\|(p-q)-(a-q)\|^2=\|p-q\|^2+\|a-q\|^2-2\langle p-q,a-q\rangle\ge\|p-q\|^2,\]
+así $\|p-q\|\le\|p-a\|$ para todo $a\in A$.
+\end{proof}
+\end{remark}
+
+\end{document}

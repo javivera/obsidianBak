@@ -12,8 +12,8 @@
       "numberInit": 1,
       "numberStyle": "arabic",
       "numberDefault": "auto",
-      "refFormat": "[title] if title exists, [type] [number] otherwise",
-      "noteMathLinkFormat": "[title] if title exists, [type] [number] otherwise",
+      "refFormat": "[type] [number] ([title])",
+      "noteMathLinkFormat": "[type] [number] ([title])",
       "ignoreMainTheoremCalloutWithoutTitle": false,
       "numberOnlyReferencedEquations": true,
       "inferEqNumberPrefix": true,
@@ -36,7 +36,7 @@
   },
   "extraSettings": {
     "foldDefault": "",
-    "noteTitleInTheoremLink": true,
+    "noteTitleInTheoremLink": false,
     "noteTitleInEquationLink": true,
     "profiles": {
       "English": {
@@ -159,6 +159,7 @@
     "Inferencia Estadistica/Theory/IE - Teorico 19.md",
     "Inferencia Estadistica/Theory/HomePage.md",
     "Inferencia Estadistica/Theory/Untitled 1.md",
-    "Inferencia Estadistica/Theory/IE - Teorico 9.md"
+    "Inferencia Estadistica/Theory/IE - Teorico 9.md",
+    "Glosario.md"
   ]
 }

@@ -1,0 +1,239 @@
+% Transcription of Teórico 1.md into LaTeX
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage{hyperref}
+$$\|x\|_2=(\sum_{j=1}^n|x_j|^2)^{1/2},$$
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}[section]
+\newtheorem{example}[definition]{Ejemplo}
+\newtheorem{remark}[definition]{Remark}
+$$\|x\|=\Big(\sum|\lambda_j|^2\Big)^{1/2}.$$
+\theoremstyle{plain}
+\newtheorem{lemma}[definition]{Lema}
+\newtheorem{proposition}[definition]{Proposición}
+\newtheorem{theorem}[definition]{Teorema}
+
+\begin{document}
+
+% metadata
+% dateCreated: 2024-09-21,00:32
+% tags: Riesz, FunctionalAnalysis, normEquivalences, banachSpace, vectorSpace
+
+$$\int_{\mathbb{N}} f\,d\mu_c=\sum_{n=1}^\infty a_n.$$ 
+
+$$\|x\|_p=(\sum|x_n|^p)^{1/p},\qquad\|x\|_\infty=\sup_n|x_n|.$$ 
+Sea $X$ un espacio vectorial sobre $\mathbb{F}$ (\(\mathbb{R}\) o \(\mathbb{C}\)). Una norma en $X$ es una función $\|\cdot\|:X\to\mathbb{R}$ tal que para todo $x,y\in X$ y $\alpha\in\mathbb{F}$ se cumple:
+$$\sum_{n=1}^\infty|x_ny_n|\le\|x\|_p\|y\|_q.$$ 
+\item $\|x\|\ge 0$.
+\item $\|x\|=0\iff x=0$.
+\item $\|\alpha x\|=|\alpha|\,\|x\|$.
+\item $\|x+y\|\le\|x\|+\|y\|$ (desigualdad triangular).
+\end{enumerate}
+\end{definition}
+
+\section*{Ejemplos de normas}
+$$\|(x,y)\|_Z=\|x\|_1+\|y\|_2$$
+\begin{example}
+Sea $\mathbb{F}^n$. La norma estándar es
+\[\|x\|_2=(\sum_{j=1}^n|x_j|^2)^{1/2},\]
+que es una norma en $\mathbb{F}^n$.
+\end{example}
+$$D=\{x:\|x\|\le1\},\qquad K=\{x:\|x\|=1\}$$
+\begin{example}
+Sea $X$ un e.v. de dimensión finita con base $\{e_1,\dots,e_n\}$. Para
+$x=\sum\lambda_j e_j$ y $y=\sum\mu_j e_j$ definimos
+\[\|x\|=\Big(\sum|\lambda_j|^2\Big)^{1/2}.\]
+Se verifica (1)--(3) fácilmente; para (4) se usa que
+\begin{align*}
+\|x+y\|^2&=\sum|\lambda_j+\mu_j|^2=\sum\big(|\lambda_j|^2+2\mathrm{Re}(\lambda_j\overline{\mu_j})+|\mu_j|^2\big)\\
+&\le\sum|\lambda_j|^2+2\sum|\lambda_j||\mu_j|+\sum|\mu_j|^2\\
+&\le\|x\|^2+2\|x\|\|y\|+\|y\|^2=(\|x\|+\|y\|)^2,
+\end{align*}
+por Hölder (caso $p=q=2$).
+\end{example}
+
+\begin{example}
+Sea $M$ un espacio métrico compacto y $C_{\mathbb{F}}(M)$ el espacio de funciones continuas (omito detalles).
+\end{example}
+
+\begin{example}
+Sea $(X,\Sigma,\mu)$ un espacio medible y considere $L^p(X)$, $1\le p\le\infty$:
+\begin{enumerate}[label=(\alph*)]
+\item Si $1\le p<\infty$, $\|f\|_p=(\int|f|^p)^{1/p}$ es una norma.
+\item Si $p=\infty$, $\|f\|_\infty=\operatorname{ess\,sup}|f|$ es norma en $L^\infty(X)$.
+\end{enumerate}
+\end{example}
+
+\begin{example}
+Caso particular: $(\mathbb{N},\mathcal{P}(\mathbb{N}),\mu_c)$ con la medida de contar. Toda función $f:\mathbb{N}\to\mathbb{F}$ se identifica con la sucesión $\{a_n\}$, $a_n=f(n)$. Entonces
+$f$ integrable respecto a $\mu_c$ es equivalente a $\sum_{n=1}^\infty|a_n|<\infty$ y
+\[\int_{\mathbb{N}} f\,d\mu_c=\sum_{n=1}^\infty a_n.\]
+Definimos $\ell^p$ como el conjunto de sucesiones $x=(x_n)$ tales que $\sum|x_n|^p<\infty$ ($1\le p<\infty$), y $\ell^\infty$ como el conjunto de sucesiones acotadas. Las normas son
+\[\|x\|_p=(\sum|x_n|^p)^{1/p},\qquad\|x\|_\infty=\sup_n|x_n|.\]
+Por Hölder, para $1/p+1/q=1$ se tiene
+\[\sum_{n=1}^\infty|x_ny_n|\le\|x\|_p\|y\|_q.
+\]
+\end{example}
+
+\begin{example}
+Si $X$ es un ev con norma $\|\cdot\|$ y $S\subset X$ subespacio, la restricción de la norma a $S$ es una norma en $S$.
+\end{example}
+
+\begin{example}
+Si $X,Y$ son espacios normados con normas $\|\cdot\|_1,\|\cdot\|_2$, entonces $Z=X\times Y$ con
+\[\|(x,y)\|_Z=\|x\|_1+\|y\|_2\]
+es un espacio normado.
+\end{example}
+
+\begin{remark}
+Un espacio vectorial con una norma se llama espacio vectorial normado. Un vector $x$ con $\|x\|=1$ se dice unitario.
+\end{remark}
+
+\begin{lemma}
+Todo espacio normado es un espacio métrico: si definimos $d(x,y)=\|x-y\|$ entonces $(X,d)$ es métrico.
+\begin{proof}
+Verificación directa de axiomas de métrica usando propiedades de la norma.
+\end{proof}
+\end{lemma}
+
+\begin{remark}
+No toda métrica proviene de una norma. Si la métrica es homogénea $d(\alpha x,\alpha y)=|\alpha|d(x,y)$ y es invariante por traslación $d(x,y)=d(x+z,y+z)$, entonces existe una norma con $d(x,y)=\|x-y\|$.
+\end{remark}
+
+\begin{theorem}[Continuidad de norma, suma y producto]
+Sea $X$ espacio vectorial normado. Si $x_n\to x$, $y_n\to y$ y $\alpha_n\to\alpha$ entonces:
+\begin{enumerate}[label=(\arabic*)]
+\item $|\,\|x\|-\|y\|\,|\le\|x-y\|$.
+\item $\lim_{n\to\infty}\|x_n\|=\|x\|$.
+\item $\lim_{n\to\infty}(x_n+y_n)=x+y$.
+\item $\lim_{n\to\infty}\alpha_n x_n=\alpha x$.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+En un espacio normado, la norma, la suma y el producto por escalar son funciones continuas.
+\end{remark}
+
+\begin{definition}[Equivalencia de normas]
+Sean $\|\cdot\|_1,\|\cdot\|_2$ normas en $X$. Decimos que son equivalentes si existen constantes $m,M>0$ tales que
+\[m\|x\|_1\le\|x\|_2\le M\|x\|_1\qquad\forall x\in X.
+\]
+\end{definition}
+
+\begin{corollary}[Propiedades de normas equivalentes]
+Si $\|\cdot\|$ y $\|\cdot\|_1$ son equivalentes con métricas asociadas $d,d_1$, entonces para toda sucesión $x_n$ en $X$:
+\begin{enumerate}[label=(\arabic*)]
+\item $x_n\to x$ en $(X,d)\iff x_n\to x$ en $(X,d_1)$.
+\item $\{x_n\}$ es de Cauchy en $(X,d)\iff$ es de Cauchy en $(X,d_1)$.
+\item $(X,d)$ es completo $\iff (X,d_1)$ es completo.
+\end{enumerate}
+\end{corollary}
+
+\begin{theorem}[Función continua en compacto tiene máximo y mínimo]
+Sea $(M,d)$ compacto y $f:M\to\mathbb{F}$ continua. Entonces $f$ es acotada y alcanza su supremo e ínfimo; en particular existen $x,y\in M$ con $f(x)=\sup|f|$ y $f(y)=\inf|f|$.
+\end{theorem}
+
+\begin{theorem}[Equivalencia a la norma 1]
+Sea $X$ espacio vectorial normado de dimensión finita con norma $\|\cdot\|$. Sea $\{e_j\}_{j=1}^n$ una base y defina
+\[\|x\|_1=\Big(\sum|\alpha_j|^2\Big)^{1/2}\quad\text{si }x=\sum\alpha_j e_j.\]
+Entonces $\|\cdot\|_1$ y $\|\cdot\|$ son equivalentes.
+\end{theorem}
+\begin{proof}
+Prueba estándar: acotar $\|x\|$ por $\|x\|_1$ usando las normas de los vectores de la base y usar compacidad de la esfera unidad para la cota inferior positiva.
+\end{proof}
+
+\begin{corollary}
+En dimensión finita todas las normas son equivalentes.
+\end{corollary}
+
+\begin{remark}[Contraejemplo II]
+Esto no vale en dimensión infinita: por ejemplo en $C^1[0,\pi]$ las normas $\|\cdot\|_\infty$ y $\|u\|=\|u\|_\infty+\|u'\|_\infty$ no son equivalentes.
+\end{remark}
+
+\begin{lemma}
+Si $X$ es de dimensión finita y $\|\cdot\|_1$ la norma euclidiana asociada a una base, entonces $(X,d_1)$ es completo (Banach).
+\end{lemma}
+\begin{proof}
+Sea $\{x^n\}$ sucesión de Cauchy. Escribir cada $x^n=\sum_{j=1}^N\alpha_j^n e_j$. Las coordenadas forman sucesiones de Cauchy en $\mathbb{F}$, por completitud convergen a límites $\alpha_j$, y entonces $x=\sum\alpha_j e_j$ es límite en la norma $\|\cdot\|_1$.
+\end{proof}
+
+\begin{corollary}
+Todo espacio vectorial de dimensión finita es completo para cualquier norma.
+\end{corollary}
+
+\begin{theorem}[Resultados en métricos]
+Sea $(M,d)$ métrico y $A\subset M$. Entonces:
+\begin{enumerate}[label=(\arabic*)]
+\item Si $A$ es completo entonces $A$ es cerrado.
+\item Si $M$ es completo, $A$ es completo $\iff A$ es cerrado.
+\item Si $A$ es compacto entonces $A$ es cerrado y acotado.
+\item En $\mathbb{F}^n$, cerrado y acotado $\Rightarrow$ compacto.
+\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+Todo subespacio vectorial de dimensión finita es cerrado.
+\end{corollary}
+
+\begin{remark}[Contraejemplo I]
+No es cierto en dimensión infinita: hay subespacios de dimensión infinita que no son cerrados (ejemplos en $\ell^\infty$).
+\end{remark}
+
+\begin{lemma}
+La clausura de un subespacio es subespacio.
+\end{lemma}
+\begin{proof}
+Si $x_n\to x$ y $y_n\to y$ con $x_n,y_n\in S$, entonces $x_n+y_n\to x+y$ y $\alpha x_n\to\alpha x$, por lo que $x+y,\alpha x\in\overline S$.
+\end{proof}
+
+\begin{definition}[Span]
+Para $E\subset X$ definimos
+\[\operatorname{Sp}(E)=\{\text{combinaciones lineales finitas de elementos de }E\},\qquad\overline{\operatorname{Sp}}(E)=\bigcap\{M: M\text{ subespacio cerrado que contiene }E\}.
+\]
+\end{definition}
+
+\begin{lemma}
+Se cumple $\overline{\operatorname{Sp}}(E)=\overline{\operatorname{Sp}(E)}$ y otras propiedades estándar.
+\end{lemma}
+
+\begin{lemma}[Lema de Riesz]
+Sea $X$ normado y $Y\subset X$ subespacio cerrado, $Y\ne X$. Para $\alpha\in(0,1)$ existe $x_\alpha\in X$ con $\|x_\alpha\|=1$ y $\|x_\alpha-y\|>\alpha$ para todo $y\in Y$.
+\end{lemma}
+\begin{proof}
+Tomar $x\in X\setminus Y$, definir $d=\inf_{z\in Y}\|x-z\|>0$ y elegir $z\in Y$ con $d<\|x-z\|<d/\alpha$. Poner $x_\alpha=(x-z)/\|x-z\|$.
+\end{proof}
+
+\begin{theorem}
+Si $X$ es de dimensión infinita, los conjuntos
+\[D=\{x:\|x\|\le1\},\qquad K=\{x:\|x\|=1\}\]
+no son compactos.
+\end{theorem}
+\begin{proof}
+Construir una sucesión en $K$ sin sub-sucesión convergente usando el lema de Riesz iterativamente; produce puntos mutuamente separados por al menos $1/2$.
+\end{proof}
+
+\begin{definition}[Espacio de Banach]
+Un espacio de Banach es un espacio normado completo.
+\end{definition}
+
+\begin{theorem}
+\begin{enumerate}[label=(\arabic*)]
+\item Todo espacio normado de dimensión finita es Banach.
+\item Si $X$ es métrico completo, $C_\mathbb{F}(X)$ es Banach.
+\item Si $(X,\Sigma,\mu)$ es espacio de medida, $L^p(X)$ ($1\le p\le\infty$) son Banach.
+\item Si $X$ es Banach y $Y$ subespacio, entonces $Y$ es Banach $\iff Y$ es cerrado.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+Sea $X$ Banach y $\{x_n\}\subset X$. Si $\sum\|x_n\|$ converge, entonces $\sum x_n$ converge (absoluta implica convergencia en Banach).
+\end{theorem}
+\begin{proof}
+Las sumas parciales forman una sucesión de Cauchy: $\|\sum_{k=n+1}^m x_k\|\le\sum_{k=n+1}^m\|x_k\|$, y como la serie de normas converge, las sumas parciales son Cauchy; por completitud convergen.
+\end{proof}
+
+\end{document}

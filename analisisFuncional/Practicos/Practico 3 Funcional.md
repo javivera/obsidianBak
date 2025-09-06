@@ -7,9 +7,6 @@ tags:
   - Separable
 ---
 >[!Exercise]
->
-
->[!Exercise]
 >Sea $\chi_{[0,1]}$ la función caracterstica del intervalo $[0,1]$ Probar que $$\{\chi_{[0,1]}(x-n)e^{2\pi im}\}_{n,m\in\mathbb{Z}}\}$$ es base ortonormal de $L^2(\mathbb{R})$ (llamada de Gabor). Deducir que $L^2(\mathbb{R})$ es separable 
 >>[!proof]-
 >>Veamos que los elementos de $E'=\{\chi_{[0,1]}(x-n)e^{ 2\pi imx }\}_{n,m\in \mathbb{Z}}$ son normales

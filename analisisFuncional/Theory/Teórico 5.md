@@ -3,36 +3,74 @@
 >[!Definition] Operador Acotado
 >Sean $X$ e $Y$ ev normados, $T : X\rightarrow Y$ lineal. $T$ se dice acotada si existe un numero $k\in \mathbb{R}$ tal que $$\lVert Tx \rVert<k\lVert x \rVert\quad\forall {x}\in X$$
 
->[!Remark]
+^b4f10c
+
+>[!Remark] Aclaraciones
 >- Continua y acotada son intercambiables por [[Teórico 4#^cae689]].
 >- Acotada en transformaciones lineales no es el mismo concepto que acotada en funciones reales 
 >- Llamamos $B(X,Y)$ al conjunto de todos los operadors $T : X\rightarrow Y$ acotados
 >- Si $X$ e $Y$ ev son normados $B(X,Y)\subseteq L(X,Y)$
 
->[!example]
+^5f85f2
+
+>[!example] Operador lineal continuo
 >Sean $a,b\in \mathbb{R}$, $k : [a,b]\times [a,b]\rightarrow \mathbb{C}$ continua y 
->$$M=\sup\{ \lvert k(s,t) \rvert:(s,t)\in [a,b]\times [a.b]  \}$$
+>$$M=\sup\{ \lvert k(s,t) \rvert:(s,t)\in [a,b]\times [a,b]  \}$$
 >- Si $g\in C[a,b]$ entonces $f:[a,b]\rightarrow\mathbb{C}$ dada por $$f(s)=\int_{a}^{b}  k(s,t)g(t)dt$$ esta en $C[a,b]$
 >- $K : C[a,b]\rightarrow C[a,b]$ lineal definida por $$(K(g))(s)=\int_{a}^{b} k(s,t)g(t)dt$$ entonces $K\in B(C[a,b],C[a,b])$ y $$\lVert K(g) \rVert_{\infty} \leq M(b-a)\lVert g \rVert_{\infty}$$
+>>[!Proof]-
+>>1. Primero probamos que $f$ definido por $f(s)=\int_a^b k(s,t)g(t)\,dt$ es continuo en $s$. 
+>>2. Fijemos $g\in C[a,b]$ y sea $\varepsilon>0$. Como $k$ es continua en el compacto $[a,b]\times[a,b]$ es uniformemente continua; por tanto existe $\delta>0$ tal que si $|s-s'|<\delta$ (notar $|(s,t)-(s',t)|=|s-s'|$ por eso vale para cualquier $t$ fijo)  entonces
+>>   $$|k(s,t)-k(s',t)|<\frac{\varepsilon}{(b-a)\|g\|_\infty}\quad\forall t\in [a,b] $$ 
+>>   Entonces, para tales $s,s'$,
+>>   $$\begin{align}|f(s)-f(s')|& =\left|\int_a^b (k(s,t)-k(s',t))g(t)dt\right| 
+>>   \\ & \leq \frac{\epsilon}{(b-a)\lVert g \rVert_{\infty}}\int_a^b |g(t)|dt
+>>   \\& \leq  \frac{\epsilon}{(b-a)\lVert g \rVert_{\infty}}\lVert g \rVert _{\infty}(b-a)\\ & <\epsilon\end{align}$$ 
+>>   Asi mostramos $f$ es continua.
+>>3. Para todo $s\in[a,b]$ se tiene
+>>   $$|(K(g))(s)|=\left|\int_a^b k(s,t)g(t)\,dt\right|
+>>   \le \int_a^b |k(s,t)|\,|g(t)|\,dt
+>>   \le \int_a^b M\|g\|_\infty\,dt = M(b-a)\|g\|_\infty.$$ 
+>>   Tomando supremo en $s$ obtenemos $\|K(g)\|_\infty\le M(b-a)\|g\|_\infty$, por lo que $K$ es acotado y $K\in B(C[a,b],C[a,b])$.
 
 ^33cdb2
 
->[!Theorem] En dim finita transformaciones lineales son continuas
->Sea $X$ espacio vectorial normado de dimension finita $Y$ espacio vectorial cualquiera y $T : X\rightarrow Y$ lineal. Entonces $T$ es continua
+>[!Theorem] Dominio dimension finita asegura continuidad
+>Sea $X$ espacio vectorial normado de dimension finita, $Y$ espacio vectorial cualquiera y $T : X\rightarrow Y$ lineal. Entonces $T$ es continua
 >>[!Proof]-
->>1. Definimos $\lVert x \rVert_{1}=\lVert x \rVert_{X}+\lVert Tx \rVert_{Y}$
->>2. Vemos que es norma
->>3. Como son todas equivalentes en dim finita $\lVert x \rVert_{X}+\lVert Tx \rVert_{Y}=\lVert x \rVert_{1}\leq K\lVert x \rVert_{X}$
->>4. Por def $\lVert Tx \rVert_{Y}\leq(K-1)\lVert x \rVert_{X}$
+>>1. Sea $\{e_1,\dots,e_n\}$ una base de $X$. Todo $x\in X$ se escribe de forma única como $x=\sum_{j=1}^n x_j e_j$
+>>2. Definamos la norma auxiliar en coordenadas $\lVert x \rVert_* = \sum_{j=1}^n |x_j|$. Esta es una norma en $X$ y, por ser $X$ de dimension finita, todas las normas son equivalentes; por tanto existe $C>0$ tal que $\lVert x \rVert_* \le C\lVert x \rVert_X$ para todo $x\in X$.
+>>3. Por linealidad,
+>>   $T(x)=\sum_{j=1}^n x_j T(e_j).$
+>>4. Aplicando la desigualdad triangular obtenemos
+>>   $\lVert T(x) \rVert_Y \le \sum_{j=1}^n |x_j|\,\lVert T(e_j) \rVert_Y \le \Big(\max_{1\le j\le n} \lVert T(e_j) \rVert_Y\Big)\sum_{j=1}^n |x_j| = C_2\lVert x \rVert_*$,
+>>   donde $C_2=\max_{1\le j\le n} \lVert T(e_j) \rVert_Y$.
+>>5. Combinando con (2) existe $K=C_2 C$ tal que
+>>   $\lVert T(x) \rVert_Y \le K\lVert x \rVert_X\quad \forall x\in X$.
+>>6. Por tanto $T$ es acotada y en consecuencia continua.
 
->[!Lemma]
+^a48ff5
+
+>[!Example] Codominio con dimension finita no asegura continuidad 
+>Sea $T:X\rightarrow Y$ con $Y$ dimension finita, no necesariamente es continuo el operador
+>>[!Proof]-
+>>1. Sea $T:\mathcal{P}\rightarrow\mathbb{C}$ dado por $T(p)=p'(1)$    
+>>2. El resto sale de forma analoga a [[Teórico 4#^63dcb1]]
+
+^035ee6
+
+>[!Lemma] $T$ continua entonces $Nu(T)$ es cerrado
 >Si $X$ e $Y$ son normados $T : X\rightarrow Y$ lineal continua entonces $Nu(T)$ es cerrado
 >>[!Proof]-
->>1. $Nu(T)=\{ x\in X:T(x)=0 \}$ y $\{ 0 \}$ es cerrado en $Y$ (por que es completo)
->>2. $T$ continua y preimagen de cerrado es cerrado
+>>3. $Nu(T)=\{ x\in X:T(x)=0 \}$ y $\{ 0 \}$ es cerrado en $Y$ (por que es completo)
+>>4. $T$ continua y preimagen de cerrado es cerrado
 
->[!Definition]
+^e19482
+
+>[!Definition] Grafico de operador lineal
 >$X$ e $Y$ normados $T : X\rightarrow Y$ lineal. Llamamos *grafico* de $T$ al subespacio $\mathcal{G}$ de $X\times Y$ definido por $$\mathcal{G}=\{ (x,Tx):x\in X \}$$
+
+^e3bbe2
 
 >[!Lemma] Grafico es cerrado
 >$X$ e $Y$ normados $T : X\rightarrow Y$ lineal y continua entonces $\mathcal{G}$ es cerrado
@@ -54,45 +92,53 @@
 >Sean $X$ e $Y$ normados. Si $\lVert \cdot \rVert:B(X,Y)\rightarrow\mathbb{R}$ esta definida por $$\lVert T \rVert =\sup\{ \lVert Tx \rVert :\lVert x \rVert \leq 1\}$$
 >Entonces $\lVert \cdot \rVert$ es una norma en $B(X,Y)$
 >>[!Proof]-
->>1. Norma de 0
->>	2. $\lVert T \rVert=0 \iff \lVert Tx \rVert=0 \quad \forall x\in X\iff Tx=0\quad\forall x\in X\iff T \text{ es la transformacion lineal 0}$
->>3. Saca escalar
->>	4. $\lVert \lambda T \rVert=\sup \{ \lVert \lambda Tx \rVert:\lVert x \rVert\leq 1 \}=\lvert \lambda \rvert\sup \{ \lVert Tx \rVert \}=\lvert \lambda \rvert\lVert T \rVert$ 
->>5. Desigualdad Triangular:
->>	6. Notar que $\left\lVert  T\left( \frac{x}{\lVert x \rVert} \right)  \right\rVert\leq\lVert T \rVert$ (Porque $\lVert T \rVert$ es supremo). Luego $\lVert Tx \rVert\leq\lVert T \rVert\lVert x \rVert$
->>	7. $\lVert (S+T)(x) \rVert\leq\lVert Sx \rVert+\lVert Tx \rVert \leq\lVert S \rVert\lVert x \rVert+\lVert T \rVert\lVert x \rVert = (\lVert S+T \rVert)\lVert x \rVert$
->>	8. Usando supremo de ambos lados $\lVert S+T \rVert\leq\lVert S \rVert+\lVert T \rVert$
+>>- Norma de 0 $\lVert T \rVert=0 \iff \lVert Tx \rVert=0 \quad \forall x\in X\iff Tx=0\quad\forall x\in X\iff T \text{ es la transformacion lineal 0}$
+>>-  Saca escalar
+>>	1. $\lVert \lambda T \rVert=\sup \{ \lVert \lambda Tx \rVert:\lVert x \rVert\leq 1 \}=\lvert \lambda \rvert\sup \{ \lVert Tx \rVert \}=\lvert \lambda \rvert\lVert T \rVert$ 
+>>- Desigualdad Triangular:
+>>		1. Notar que $\left\lVert  T\left( \frac{x}{\lVert x \rVert} \right)  \right\rVert\leq\lVert T \rVert$ (Porque $\lVert T \rVert$ es supremo). Luego $\lVert Tx \rVert\leq\lVert T \rVert\lVert x \rVert$
+>>		2. $\lVert (S+T)(x) \rVert\leq\lVert Sx \rVert+\lVert Tx \rVert \leq\lVert S \rVert\lVert x \rVert+\lVert T \rVert\lVert x \rVert = (\lVert S+T \rVert)\lVert x \rVert$
+>>		3. Usando supremo de ambos lados $\lVert S+T \rVert\leq\lVert S \rVert+\lVert T \rVert$
 
 >[!Remark]
 >$\lVert T \rVert=\sup\{ \lVert Tx \rVert:\lVert x \rVert\leq {1} \}=\sup\{ \lVert Tx \rVert :\lVert x \rVert=1\}$
 >>[!Proof]-
->>Sea $\beta= \sup\{ \lVert Tx \rVert:\lVert x \rVert\leq {1} \}$ y $\alpha =\sup\{ \lVert Tx \rVert :\lVert x \rVert=1\}$ 
->>9. $(\beta \geq\alpha )$ Trivial
->>10. $(\leq)$ Supongamos $\alpha < \beta$
->>11. $\exists x_{j}$ con $\lVert x_{j} \rVert\leq 1$ tal que $\lVert Tx_{j} \rVert \rightarrow\beta$ (Por ser supremo)
->>12. Entonces $\exists x_{0}$ con $\lVert x_{0} \rVert\leq 1$ tal que $\lVert Tx_{0} \rVert>\alpha$
->>13. Entonces $\alpha\geq \lVert T(\frac{x_{0}}{\lVert x_{0} \rVert}) \rVert =\frac{\lVert Tx_{0} \rVert}{\lVert x_{0} \rVert}\geq\lVert Tx_{0} \rVert>\alpha$ (Por def de supremo y $\lVert x_{0} \rVert \leq 1$) Absurdo
+>>4. Sea $\beta= \sup\{ \lVert Tx \rVert:\lVert x \rVert\leq {1} \}$ y $\alpha =\sup\{ \lVert Tx \rVert :\lVert x \rVert=1\}$ 
+>>5. $(\beta \geq\alpha )$ Trivial
+>>6. $(\leq)$ Supongamos $\alpha < \beta$
+>>7. $\exists x_{j}$ con $\lVert x_{j} \rVert\leq 1$ tal que $\lVert Tx_{j} \rVert \rightarrow\beta$ (Por ser supremo)
+>>8. Entonces $\exists x_{0}$ con $\lVert x_{0} \rVert\leq 1$ tal que $\lVert Tx_{0} \rVert>\alpha$
+>>9. Entonces $\alpha\geq \lVert T(\frac{x_{0}}{\lVert x_{0} \rVert}) \rVert =\frac{\lVert Tx_{0} \rVert}{\lVert x_{0} \rVert}\geq\lVert Tx_{0} \rVert>\alpha$ (Por def de supremo y $\lVert x_{0} \rVert \leq 1$) Absurdo
 
 >[!Remark]
 >Notar que del [[Teórico 4#^cae689]] se desprende 
 >$$\sup\{ \lVert Tx \rVert :\lVert x \rVert \leq 1  \}=\inf\{ k:\lVert Tx \rVert \leq k\lVert x \rVert\quad \forall x\in X  \}$$
+>>[!Proof]
+>>Ver
 
 >[!example]
->$T : C_{\mathbb{F}}[0,1]\rightarrow \mathbb{F}$ lineal definido como $$T(f)=0$$
+>$T : C_{\mathbb{F}}[0,1]\rightarrow \mathbb{F}$ lineal definido como $$T(f)=f(0)$$
 >entonces $\lVert T \rVert=1$
 >>[!Proof]-
->>14. Ya probamos en [[Teórico 4#^9798e1]] que $\lvert T(f) \rvert\leq 1\lVert f \rVert$ 
->>15. $\lVert T \rVert=\inf\{ k:\lVert T(f) \rVert \leq k\lVert f \rVert: \forall f\in C_{\mathbb{F}}[0,1]\}\leq 1$
->>16. Por otro lado sea $g:[0,1]\rightarrow\mathbb{C}$ esta definida como $g(x)=1$ entonces $g\in C_{\mathbb{C}}[0,1]$
->>17. $\lVert g \rVert=\sup\{ \lvert g(x) \rvert:x\in [0,1] \}$
->>18. $\lvert T(g) \rvert=\lvert g(0) \rvert=1$ (Todo por definicion de $T$)
->>19. $1=\lvert T(g) \rvert\leq\lVert T \rVert\lVert g \rVert=\lVert T \rVert$
->>20. Finalmente $\lVert T \rVert=1$
+>>10. Ya probamos en [[Teórico 4#^9798e1]] que $\lvert T(f) \rvert\leq 1\lVert f \rVert$ 
+>>11. $\lVert T \rVert=\inf\{ k:\lVert T(f) \rVert \leq k\lVert f \rVert: \forall f\in C_{\mathbb{F}}[0,1]\}\leq 1$
+>>12. Por otro lado sea $g:[0,1]\rightarrow\mathbb{C}$ esta definida como $g(x)=1$ entonces $g\in C_{\mathbb{C}}[0,1]$
+>>13. $\lVert g \rVert=\sup\{ \lvert g(x) \rvert:x\in [0,1] \}$
+>>14. $\lvert T(g) \rvert=\lvert g(0) \rvert=1$ (Todo por definicion de $T$)
+>>15. $1=\lvert T(g) \rvert\leq\lVert T \rVert\lVert g \rVert=\lVert T \rVert$
+>>16. Finalmente $\lVert T \rVert=1$
 
 >[!Theorem]
 >Sea $X$ un normado y sea $W$ un subespacio denso de $X$. Sea $Y$ un Banach y $S\in B(W,Y)$
 >- (a) Sea $x\in X$ y $\{ x_{n} \},\{ y_{n} \}$ sucesiones en $W$ tales que $x_{n}\rightarrow x$ e $y_{n}\rightarrow x$ entonces $\{ S(x_{n}) \}$ y $\{ S(y_{n}) \}$ ambas convergen y $\lim_{ n \to \infty }S(x_{n})=\lim_{ n \to \infty }S(y_{n})$
 >- (b)  Existe un $T\in B(X,Y)$ tal que $\lVert T \rVert=\lVert S \rVert$ y $Tx=Sx\quad\forall x\in W$
+>>[!Proof]
+>>- (a) 
+>>	1. Como $x_{n}$ converge es de Cauchy. Luego $\lVert Sx_{n}-Sx_{m} \rVert=\lVert S(x_{n}-x_{m}) \rVert\leq \lVert S \rVert\lVert x_{n}-x_{m} \rVert\rightarrow 0$ entonces $Sx_{n}$ es de Cauchy
+>>	2. Luego como $Sx_{n}$ es de Cauchy e $Y$ Banach entonces $Sx_{n}$ convege
+>>	3. Además por hipótesis $x_{n}-y_{n}\rightarrow0$ luego $\lVert Sx_{n}-Sy_{n} \rVert\leq \lVert S \rVert\lVert x_{n}-y_{n} \rVert\rightarrow0$  Mostrando $\lim\limits_{ n \to \infty }Sx_{n}-Sy_{n}=0$ osea $\lim\limits_{ n \to \infty }Sx_{n}=\lim\limits_{ n \to \infty }Sy_{n}$ 
+>>- (b) 
+>>	1. A
 
 ^33d528
 

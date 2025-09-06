@@ -1,0 +1,121 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\begin{document}
+
+% --- Producto Interno ---
+
+\section*{Producto Interno}
+
+\textbf{Definición:} Un espacio vectorial sobre $\mathbb{R}$ ($\mathbb{C}$). Un producto interno en $X$ es una función $X \times X \to \mathbb{R}$ ($\mathbb{C}$) tal que para todo $x, y, z \in X$, $\alpha, \beta \in \mathbb{R}$ ($\mathbb{C}$):
+\begin{itemize}
+    \item[a)] $\langle x, x \rangle \ge 0$ (y $\langle x, x \rangle \in \mathbb{R}$)
+    \item[b)] $\langle x, x \rangle = 0 \iff x = 0$
+    \item[c)] $\langle \alpha x + \beta y, z \rangle = \alpha \langle x, z \rangle + \beta \langle y, z \rangle$
+    \item[d)] $\langle x, y \rangle = \langle y, x \rangle$ \quad ($\langle x, y \rangle = \overline{\langle y, x \rangle}$)
+\end{itemize}
+
+\textbf{Ejemplos:}
+\begin{itemize}
+    \item $(\cdot, \cdot): \mathbb{C}^n \times \mathbb{C}^n \to \mathbb{C}$ dado por $\langle x, y \rangle = \sum x_k \bar{y}_k$
+    \item $\langle \cdot, \cdot \rangle: \mathbb{R}^n \times \mathbb{R}^n \to \mathbb{R}$ dado por $\langle x, y \rangle = \sum_{k=1}^n x_k y_k$
+    \item Si $X$ es un ev con base $\{e_1, \dots, e_k\}$ y $x = \sum \lambda_k e_k$, $y = \sum \beta_k e_k$, entonces $\langle x, y \rangle = \sum \lambda_k \bar{\beta}_k$
+    \item Si $(X, \Sigma, \mu)$ es medible, entonces $\langle f, g \rangle = \int f \overline{g}$ es producto interno en $L^2(X)$
+    \item Para $a = \{a_n\} \in \ell^2$, $b = \{b_n\} \in \ell^2$, entonces $\langle a, b \rangle = \sum a_n \overline{b_n}$
+    \item Si $X$ ev con $\langle \cdot, \cdot \rangle$ y $S$ subespacio, la restricción es producto interno en $S$
+    \item Si $X, Y$ son ev con productos internos $\langle \cdot, \cdot \rangle_1$, $\langle \cdot, \cdot \rangle_2$, entonces en $Z = X \times Y$:
+    \[
+    \langle (u, v), (x, y) \rangle_Z = \langle u, x \rangle_1 + \langle v, y \rangle_2
+    \]
+\end{itemize}
+
+\textbf{Lema:} (Resultados evpi) Para $x, y, z \in X$, $\alpha, \beta \in \mathbb{F}$:
+\begin{itemize}
+    \item[a)] $\langle 0, y \rangle = \langle x, 0 \rangle = 0$
+    \item[b)] $\langle x, \alpha y + \beta z \rangle = \bar{\alpha} \langle x, y \rangle + \bar{\beta} \langle x, z \rangle$
+    \item[c)]
+    $\langle \alpha x + \beta y, \alpha x + \beta y \rangle = |\alpha|^2 \langle x, x \rangle + |\beta|^2 \langle y, y \rangle + \alpha \bar{\beta} \langle x, y \rangle + \beta \bar{\alpha} \langle y, x \rangle$
+\end{itemize}
+
+\textbf{Proposición: Desigualdad de Cauchy-Schwarz}
+\begin{itemize}
+    \item[a)] $|\langle x, y \rangle|^2 \le \langle x, x \rangle \langle y, y \rangle$
+    \item[b)] La función $\|x\| = \langle x, x \rangle^{1/2}$ es norma en $X$
+\end{itemize}
+
+\textbf{Norma Inducida:}
+\[
+\|x\| = \langle x, x \rangle^{1/2}
+\]
+\[
+|\langle x, y \rangle| \le \|x\| \|y\|
+\]
+
+\textbf{Lema:} Para todo $u, v, x, y \in X$:
+\begin{itemize}
+    \item[a)] $\langle u+v, x+y \rangle - \langle u-v, x-y \rangle = 2\langle u, y \rangle + 2\langle v, x \rangle$
+    \item[b)] $4\langle u, y \rangle = \langle u+v, x+y \rangle - \langle u-v, x-y \rangle + i\langle u+iv, x+iy \rangle - i\langle u-ix, x-iy \rangle$ si $\mathbb{F} = \mathbb{C}$
+\end{itemize}
+
+\textbf{Teorema: Regla del Paralelogramo e Identidad de Polarización}
+\begin{itemize}
+    \item[a)] $\|x+y\|^2 + \|x-y\|^2 = 2(\|x\|^2 + \|y\|^2)$
+    \item[b)] Si $\mathbb{F} = \mathbb{R}$, $4\langle x, y \rangle = \|x+y\|^2 - \|x-y\|^2$
+    \item[c)] Si $\mathbb{F} = \mathbb{C}$, $4\langle x, y \rangle = \|x+y\|^2 - \|x-y\|^2 + i\|x+iy\|^2 - i\|x-iy\|^2$
+\end{itemize}
+
+\textbf{Contraejemplo:} La norma en $C[0,1]$ no proviene de un producto interno, por lo tanto no vale la regla del paralelogramo.
+
+\textbf{Proposición: Continuidad del producto interno}
+
+Sea $X$ evpi y $\{x_n\}, \{y_n\} \subset X$ tales que $x_n \to x$, $y_n \to y$ entonces $\langle x_n, y_n \rangle \to \langle x, y \rangle$.
+
+\section*{Ortogonalidad}
+
+\textbf{Definición:} $x, y \in X$ son ortogonales si $\langle x, y \rangle = 0$. Un conjunto $\{e_1, \dots, e_n\}$ es ortonormal si $\|e_k\| = 1$ y $\langle e_j, e_k \rangle = 0$ para $j \neq k$.
+
+\textbf{Lema:} Un conjunto ortonormal es l.i. y si $\dim X = k$ entonces es base ortonormal. Para todo $x \in X$:
+\[
+x = \sum_{n=1}^k \langle x, e_n \rangle e_n
+\]
+
+\textbf{Teorema (Gram-Schmidt):} Dada una base l.i. $\{v_1, \dots, v_k\}$ existe una base ortonormal $\{e_1, \dots, e_k\}$.
+
+\textbf{Definición: Espacio de Hilbert} Un espacio vectorial con producto interno completo respecto a la métrica inducida por la norma.
+
+\textbf{Ejemplos:}
+\begin{itemize}
+    \item Todo ev de $\dim < \infty$ con $(\cdot, \cdot)$
+    \item $L^2(X)$, $\ell^2$ con los productos internos estándar
+\end{itemize}
+
+\textbf{Contraejemplo:} $\ell^2_c$ (sucesiones finitamente no nulas) no es completo.
+
+\textbf{Proposición:} Si $\mathcal{H}$ es Hilbert y $Y \subset \mathcal{H}$ subespacio, entonces $Y$ es Hilbert si y solo si es cerrado.
+
+\section*{Complemento ortogonal}
+
+\textbf{Definición:} Dado $A \subset X$, $A^\perp = \{x \in X : \langle x, a \rangle = 0, \forall a \in A\}$
+
+\textbf{Ejemplos:}
+\begin{itemize}
+    \item $X = \mathbb{R}^3$, $A = \{(a_1, a_2, a_3) : a_3 = 0\}$, entonces $A^\perp = \{(0, 0, x_3)\}$
+    \item Si $\{e_1, \dots, e_k\}$ es base, $A = \operatorname{span}\{e_1, \dots, e_p\}$, entonces $A^\perp = \operatorname{span}\{e_{p+1}, \dots, e_k\}$
+\end{itemize}
+
+\textbf{Lema:} Propiedades de $A^\perp$ (ver archivo original para detalles).
+
+\textbf{Proposición:} $x \in Y^\perp \iff \|x-y\| \geq \|x\|$ para todo $y \in Y$.
+
+\section*{Convexidad y Proyección}
+
+\textbf{Definición:} $A \subset X$ es convexo si $tx + (1-t)y \in A$ para todo $x, y \in A$, $t \in (0,1)$.
+
+\textbf{Teorema:} (Proyección sobre convexo) En un Hilbert, para $A$ cerrado y convexo y $p \in \mathcal{H}$, existe único $q \in A$ tal que $\|p-q\| = \inf_{a \in A} \|p-a\|$.
+
+\textbf{Caracterización:} $\|p-q\| = \min_{a \in A} \|p-a\| \iff \langle p-q, a-q \rangle \leq 0$ para todo $a \in A$.
+
+\textbf{Demostración:} (ver archivo original para detalles y desarrollo paso a paso)
+
+\end{document}

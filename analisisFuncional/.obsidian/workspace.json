@@ -4,11 +4,25 @@
     "type": "split",
     "children": [
       {
-        "id": "8dc7ca013d6e20f8",
+        "id": "dcad028f0bcdea2d",
         "type": "tabs",
         "children": [
           {
-            "id": "0366410b9134199b",
+            "id": "d73a600bebfd7550",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Theory/Teórico 2.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Teórico 2"
+            }
+          },
+          {
+            "id": "cfaf91a95251d2b1",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,8 +34,37 @@
               "icon": "lucide-file",
               "title": "Teórico 3"
             }
+          },
+          {
+            "id": "4b0268022f90d7c6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Theory/Teórico 4.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Teórico 4"
+            }
+          },
+          {
+            "id": "cbdf4ac54f79d56a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Theory/Teórico 5.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Teórico 5"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -48,30 +91,25 @@
             }
           },
           {
-            "id": "6acdf623e8a90d88",
+            "id": "dafb10a336ad1352",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Glosario.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
-            }
-          },
-          {
-            "id": "d158f62172240315",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {},
-              "icon": "lucide-bookmark",
-              "title": "Bookmarks"
+              "title": "Glosario"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 376.5
   },
   "right": {
     "id": "ce4bb695f0ccdb6c",
@@ -160,8 +198,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "git-view"
             }
           },
           {
@@ -170,7 +208,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "dim finita es cerrado",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -182,25 +220,26 @@
             }
           },
           {
-            "id": "bfd7caa2d2f303cf",
+            "id": "3117f6e6f437a454",
             "type": "leaf",
             "state": {
               "type": "copilot-chat-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "copilot-chat-view"
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 602.5,
+    "width": 518.5,
     "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -208,18 +247,39 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "obsidian-git:Open Git source control": false,
-      "copilot:Open Copilot Chat": false
+      "copilot:Open Copilot Chat": false,
+      "terminal:Open terminal": false
     }
   },
-  "active": "0366410b9134199b",
+  "active": "cbdf4ac54f79d56a",
   "lastOpenFiles": [
-    "teoricos_1_2.pdf",
-    "teoricos_1_2.aux",
-    "teoricos_1_2.log",
-    "teoricos_1_2.tex",
-    "Theory/Teórico 1.md",
+    "Glosario.md",
+    "Theory/Teórico 5.md",
+    "Theory/Teórico 4.md",
     "Theory/Teórico 3.md",
+    "AGENTS.md",
+    "examen.md",
+    "Theory/Teórico 1.md",
     "Theory/Teórico 2.md",
+    "AF - Pr1 2.png",
+    "chatsAI/probando.md",
+    "opencodetmp/opencode",
+    "opencodetmp/opencode-darwin-arm64.zip",
+    "opencodetmp",
+    "Practicos/conversation.md",
+    "chatsAI",
+    "Practicos/AF - Pr1.md",
+    "Practicos/opencodetmp/opencode",
+    "Practicos/opencodetmp/opencode-darwin-arm64.zip",
+    "Practicos/opencodetmp",
+    "Practicos/Practico 3 Funcional copy.md",
+    "Theory/Teorico2_full_auto.tex",
+    "Theory/Teorico2_full.tex",
+    "Theory/Teorico2_completo.tex",
+    "copilot-conversations/[!Proposition]_Sea_$Y$_subesp_de_$X$_evpi_entonces_$x_in@20250815_220423.md",
+    "copilot-conversations/is_this_correct_$begin{align}0_le_langle_alpha_x_+_beta@20250815_151918.md",
+    "Theory/Contraejemplos.md",
+    "copilot-conversations/hey@20250806_194204.md",
     "Theory/Teórico 6.md",
     "Theory/Teórico 8.md",
     "Inferencia Estadistica/Theory/IE - Teorico 13.md",
@@ -227,37 +287,17 @@
     "13 bis.md",
     "Inferencia Estadistica/Theory/IE - Teorico 25.md",
     "Inferencia Estadistica/Theory/IE - Teorico 25bis.md",
-    "Untitled.md",
     "Untitled 2.md",
     "Inferencia Estadistica/Theory/IE - Teorico 19.md",
     "Analisis Funcional/Theory/Teórico 19.md",
     "Analisis Funcional/Theory/Teórico 20.md",
-    "Inferencia Estadistica/Theory/IE - Teorico 23.md",
-    "Inferencia Estadistica/Glosario.md",
-    "copilot-conversations/[!Remark]_Cuando_definimos_la_mediana_muestral_$_hat{m}_n(X_1,_dots,_X_n)@20250727_225017.md",
-    "copilot-conversations/esta_bien_esta_definicion_[!Example]_Sea_$X_1,_dots,_X_n$_una@20250727_221225.md",
-    "copilot-conversations/[!Definition]_Estimadores_Plug_In_Estimadores_del_tipo_del_ejemplo_anterior,@20250727_193851.md",
-    "copilot-conversations/[[IE_-_Teorico_23]]_Más_en_general,_si_tenemos_una@20250727_192449.md",
-    "copilot-conversations/Observamos_que_por_la_Ley_Fuerte_de_los_Grandes_Números,@20250727_191223.md",
-    "copilot-conversations/[[IE_-_Teorico_23]]_how_is_it_that_we_say@20250727_181940.md",
-    "copilot-conversations/[[IE_-_Teorico_23]]_[!Remark]_Otra_forma_de_estimar_en@20250727_174139.md",
-    "copilot-conversations/[!Remark]_Método_de_los_Momentos_Sea_$X_1,_dots,_X_n$_una@20250727_160306.md",
-    "copilot-conversations/[!Remark]_Volvemos_a_la_presentación_general._Si_tenemos_$Theta_subseteq@20250727_142759.md",
     "Pasted image 20250726170614.png",
     "Pasted image 20250726164154.png",
     "Pasted image 20250726163700.png",
     "Pasted image 20250726121754.png",
     "Pasted image 20250726121719.png",
     "Pasted image 20250726121442.png",
-    "copilot-custom-prompts",
-    "Inferencia Estadistica/probando.tex",
-    "Inferencia Estadistica/probando.typ",
-    "Inferencia Estadistica/probando.typst",
-    "Inferencia Estadistica/prueba.pdf",
-    "Inferencia Estadistica/prueba.typst",
     "Inferencia Estadistica/Imagenes/Pasted image 20250506100617.png",
-    "Inferencia Estadistica/Imagenes/Pasted image 20250517134031.png",
-    "Inferencia Estadistica/Imagenes/Pasted image 20250518093944.png",
-    "Ecuaciones Diferenciales I"
+    "Inferencia Estadistica/Imagenes/Pasted image 20250517134031.png"
   ]
 }
